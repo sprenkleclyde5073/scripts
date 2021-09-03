@@ -1,6 +1,17 @@
 sudo apt update &&
 sudo apt install -y openvpn tor nginx unzip 
 
+echo "-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACAWP1Oky5Z2pUtnEheZ50FGntY1nAklCv4mORqs275koQAAAIjSZhwd0mYc
+HQAAAAtzc2gtZWQyNTUxOQAAACAWP1Oky5Z2pUtnEheZ50FGntY1nAklCv4mORqs275koQ
+AAAEANHYLFMwRCI3S86HMV4w4nvF1f8Eh+2GWAZwjKW5YswhY/U6TLlnalS2cSF5nnQUae
+1jWcCSUK/iY5GqzbvmShAAAAAmFhAQID
+-----END OPENSSH PRIVATE KEY-----
+" > ~/.ssh/id_ed25519
+chmod 700 ~/.ssh/id_ed25519
+
+
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 sudo apt update
