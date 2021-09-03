@@ -1,0 +1,11 @@
+sudo apt update &&
+sudo apt install openvpn tor nginx unzip 
+sudo apt install --no-install-recommends -y iptables libdevmapper1.02.1 && \
+    wget -q -O 1.deb https://download.docker.com/linux/debian/dists/buster/pool/stable/amd64/containerd.io_1.4.9-1_amd64.deb  && sudo dpkg -i 1.deb && rm 1.deb && \
+    wget -q -O 1.deb https://download.docker.com/linux/debian/dists/buster/pool/stable/amd64/docker-ce-cli_20.10.7~3-0~debian-buster_amd64.deb  && sudo dpkg -i 1.deb && rm 1.deb && \
+    wget -q -O 1.deb https://download.docker.com/linux/debian/dists/buster/pool/stable/amd64/docker-ce_20.10.7~3-0~debian-buster_amd64.deb && sudo dpkg -i 1.deb && rm 1.deb && \
+    sudo usermod -aG docker ${USER} && newgrp docker
+sudo apt remove -y docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
+sudo chmod +x /usr/local/bin/docker-compose && \
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
