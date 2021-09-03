@@ -1,7 +1,8 @@
 sudo apt update &&
-sudo apt install -y openvpn tor nginx unzip 
+sudo apt install -y git openvpn tor nginx unzip 
 
-
+git config user.name a
+git config --global user.email a@a.com
 
 
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
